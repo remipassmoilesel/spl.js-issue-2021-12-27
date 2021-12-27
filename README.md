@@ -2,11 +2,6 @@
 
 ## Description
 
-Hi @jvail
-
-Thanks for this beautiful work. I am trying to integrate spl.js in a typescript frontend. But I did not manage to import 
-the async version.
-
 When I try a simple example:  
 
 ```
@@ -29,13 +24,12 @@ TS2339: Property 'then' does not exist on type 'ISPLSync'.
   > 4 |     const db = await SPL().then(spl => spl.db(undefined));
       |                            ^^^^
     5 |
-    6 |     console.assert(await db.exec('select spatialite_version()').get.first === '5.0.1');
-    7 |
 ```
 
-Code can be found in this repository: FILLME
+Code can be found in this repository: https://github.com/remipassmoilesel/spl.js-issue-2021-12-27  
+See `splPlayground.js`: https://github.com/remipassmoilesel/spl.js-issue-2021-12-27/blob/master/src/splPlayground.ts
 
-In my opinion it is due to the package.json structure:
+In my opinion it is due to `spl.js` package.json structure:
 ```
     ...
     "main": "dist/spl.js",
@@ -59,4 +53,3 @@ choose according to the target (node or browser)
     import {IAsyncSpl as Spl} from 'spl.js'
     import {ISyncSpl as Spl} from 'spl.js'
 ```
-- If you are interested in a PR let me know.
